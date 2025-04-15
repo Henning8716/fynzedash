@@ -1,48 +1,157 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { SiDiscord } from "react-icons/si";
+import { 
+  ArrowLeftRight, 
+  Home, 
+  Shield, 
+  Zap, 
+  FileText, 
+  HelpCircle, 
+  MessageSquare,
+  Menu,
+  X
+} from "lucide-react";
+
+import logoImg from "../assets/logo.png";
+
+const navItems = [
+  { icon: Home, label: "Dashboard", href: "/" },
+  { icon: Shield, label: "HWID Spoofer", href: "/spoofer" },
+  { icon: Zap, label: "Features", href: "/features" },
+  { icon: ArrowLeftRight, label: "Pricing", href: "/pricing" },
+  { icon: FileText, label: "FAQ", href: "/faq" },
+  { icon: MessageSquare, label: "Testimonials", href: "/testimonials" },
+  { icon: HelpCircle, label: "Support", href: "/support" },
+];
 
 export default function Sidebar() {
-  const navItems = [
-    { href: "#", icon: "fa-tachometer-alt", text: "Dashboard" },
-    { href: "#services", icon: "fa-server", text: "Services" },
-    { href: "#hwid-spoofer", icon: "fa-shield-alt", text: "HWID Spoofer", active: true },
-    { href: "#features", icon: "fa-list-check", text: "Features" },
-    { href: "#faq", icon: "fa-question-circle", text: "FAQ" },
-    { href: "#testimonials", icon: "fa-quote-right", text: "Testimonials" }
-  ];
+  const [location] = useLocation();
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 h-screen w-64 bg-zinc-900 border-r border-zinc-800 z-10 hidden lg:block">
-      <div className="flex items-center justify-center h-16 border-b border-zinc-800">
-        <div className="text-primary font-bold text-2xl tracking-tight font-mono">Fynze</div>
+    <>
+      {/* Mobile Menu Button */}
+      <div className="fixed top-4 left-4 z-50 lg:hidden">
+        <Button 
+          variant="outline" 
+          size="icon" 
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          className="gradient-border-hover"
+        >
+          {isMobileOpen ? <X size={18} /> : <Menu size={18} />}
+        </Button>
       </div>
-      <div className="overflow-y-auto h-[calc(100vh-4rem)]">
-        <ul className="pt-4">
-          {navItems.map((item, index) => (
-            <li key={index}>
-              <a 
-                href={item.href} 
-                className={`flex items-center px-4 py-3 ${item.active ? "text-primary" : "text-zinc-300"} hover:bg-zinc-800`}
-              >
-                <i className={`fas ${item.icon} w-6`}></i>
-                <span className="ml-2">{item.text}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-        
-        <div className="px-4 py-6 mt-6 border-t border-zinc-800">
-          <div className="bg-zinc-950 rounded-lg p-4">
-            <div className="flex items-center">
-              <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
-              <span className="ml-2 text-sm text-zinc-400">Elite Support</span>
-            </div>
-            <p className="text-xs text-zinc-400 mt-2">24/7 Elite support available for all services</p>
-            <button className="mt-3 w-full py-1.5 rounded bg-primary text-white text-xs hover:bg-primary/90 transition">
-              Contact Support
-            </button>
+
+      {/* Mobile Sidebar Overlay */}
+      {isMobileOpen && (
+        <div 
+          className="fixed inset-0 bg-black/70 z-40 lg:hidden" 
+          onClick={() => setIsMobileOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside 
+        className={cn(
+          "fixed top-0 left-0 z-40 h-full gradient-bg-dark border-r border-slate-800",
+          "transition-all duration-300 ease-in-out",
+          "flex flex-col gap-1 py-4",
+          isExpanded ? "w-56" : "w-16",
+          isMobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+        )}
+      >
+        {/* Logo */}
+        <div className="px-2 mb-6">
+          <div 
+            className={cn(
+              "flex items-center justify-center h-12 rounded-md",
+              "cursor-pointer transition-all duration-300",
+              isExpanded ? "justify-start pl-2" : "justify-center"
+            )}
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            <img 
+              src={logoImg} 
+              alt="Fynze"
+              className="h-10 w-auto object-contain"
+            />
+            {isExpanded && (
+              <span className="ml-2 font-bold text-lg gradient-text">Fynze</span>
+            )}
           </div>
         </div>
-      </div>
-    </nav>
+
+        {/* Nav Items */}
+        <div className="flex-1 flex flex-col gap-0.5 px-2">
+          <TooltipProvider>
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = location === item.href;
+              
+              return (
+                <Tooltip key={item.href} delayDuration={0}>
+                  <TooltipTrigger asChild>
+                    <Link href={item.href}>
+                      <Button
+                        variant={isActive ? "default" : "ghost"}
+                        className={cn(
+                          "w-full justify-start flex items-center",
+                          "h-10 px-2 font-medium",
+                          isActive && !isExpanded && "gradient-bg-button glow-effect",
+                          isActive && isExpanded && "gradient-bg-button glow-effect"
+                        )}
+                      >
+                        <Icon size={18} className={cn("transition-all", isExpanded ? "mr-2" : "mx-auto")} />
+                        {isExpanded && <span>{item.label}</span>}
+                      </Button>
+                    </Link>
+                  </TooltipTrigger>
+                  {!isExpanded && (
+                    <TooltipContent side="right">
+                      {item.label}
+                    </TooltipContent>
+                  )}
+                </Tooltip>
+              );
+            })}
+          </TooltipProvider>
+        </div>
+
+        {/* Discord Link */}
+        <div className="mt-auto px-2">
+          <TooltipProvider>
+            <Tooltip delayDuration={0}>
+              <TooltipTrigger asChild>
+                <a 
+                  href="https://discord.gg/gxw4GaKkGp" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "flex items-center h-10 px-2 rounded-md",
+                    "text-cyan-400 hover:text-cyan-300",
+                    "transition-all duration-200",
+                    "gradient-border-hover",
+                    isExpanded ? "justify-start" : "justify-center"
+                  )}
+                >
+                  <SiDiscord size={18} className={isExpanded ? "mr-2" : "mx-auto"} />
+                  {isExpanded && <span>Join Discord</span>}
+                </a>
+              </TooltipTrigger>
+              {!isExpanded && (
+                <TooltipContent side="right">
+                  Join Discord
+                </TooltipContent>
+              )}
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+      </aside>
+    </>
   );
 }
