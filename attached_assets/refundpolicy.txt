@@ -1,0 +1,52 @@
+**Refund Policy**
+
+**Last Updated:** April 14, 2025
+
+**1. Our Firm Policy: All Sales Are Final**
+
+Thank you for choosing Fynze. We specialize in digital products and services, which, due to their nature, are accessible immediately upon purchase. Consequently, **Fynze maintains a strict NO REFUND policy.** Once a purchase is completed and the digital product or service access is delivered or made available, the sale is considered **final, irreversible, and non-refundable.**
+
+**By proceeding with a purchase on our platform (e.g., via billgang), you explicitly acknowledge, understand, and agree to waive any right to a refund, except under the extraordinarily limited circumstances outlined below, which are determined solely at Fynze's absolute discretion.**
+
+**2. Nature of Digital Goods**
+
+Digital products cannot be "returned" in the traditional sense. Once downloaded or accessed, they remain in your possession. This policy is necessary to protect our intellectual property, prevent abuse, and maintain fair operations for all users.
+
+**3. Extremely Limited Exceptions (Sole Discretion of Fynze)**
+
+While our default stance is unequivocally no refunds, Fynze *may*, in exceedingly rare cases and entirely at its own discretion, consider a refund or store credit only if **all** of the following conditions are met:
+
+*   **Verifiable Non-Delivery:** You demonstrably paid for but received absolutely no access or download link to the purchased product due to a confirmed technical failure originating solely within Fynze's systems, AND
+*   **Prompt Reporting:** You reported this specific non-delivery issue to Fynze support via official channels within one hour of the purchase date, providing verifiable proof of purchase and non-receipt, AND
+*   **Resolution Failure:** Fynze support is verifiably unable to provide you with access to the purchased product within one hour after confirming the issue.
+
+**No other circumstances will be considered for a refund.**
+
+**4. Circumstances Explicitly Ineligible for Refunds**
+
+To avoid any ambiguity, refunds **will NOT** be granted for any reason including, but absolutely not limited to:
+
+*   Changing your mind after purchase.
+*   Accidental purchase (except potentially verifiable immediate duplicate charges caused by system error, reviewed case-by-case).
+*   Lack of expertise or required third-party software/hardware to use the product.
+*   The product not meeting subjective expectations or needs, provided it functions as described.
+*   Compatibility issues with systems, software, or configurations not explicitly listed as supported by Fynze.
+*   No longer needing the product after purchase.
+*   Finding an alternative product after purchase.
+*   Issues arising from user error, system misconfiguration, or conflicts with other software on your system.
+*   Failure to read the product description, features, or requirements prior to purchase.
+*   Disagreement with any part of our Terms of Service or other policies.
+*   Server downtime or temporary unavailability of services.
+*   Promotional price changes after your purchase.
+
+**5. Refund Request Process (For Exception Cases Only)**
+
+If, and only if, you genuinely believe your situation meets **all** criteria for the extremely limited exception outlined in Section 3, contact Fynze support at https://discord.gg/gxw4GaKkGp within the stipulated timeframe. Provide: Order ID, purchase email, product name, and irrefutable evidence supporting the claim of non-delivery and Fynze system failure. **Submission of a request does not imply eligibility or guarantee a refund.** All decisions are final and at Fynze's sole discretion.
+
+**6. Chargebacks Are Strongly Discouraged**
+
+Initiating a chargeback or payment dispute through your bank or payment processor (e.g., billgang) without first exhausting the process outlined above (if applicable) or for reasons clearly stated as ineligible in this policy is considered a violation of trust and terms. **Doing so will likely result in the immediate and permanent termination of your Fynze account, revocation of all product licenses, and potential blacklisting from future purchases, without recourse.** We urge you to contact support first.
+
+**7. Policy Modifications**
+
+Fynze reserves the right to modify this Refund Policy at any time without notice. The policy in effect at the time of your purchase will govern that transaction.

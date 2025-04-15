@@ -1,0 +1,61 @@
+**Privacy Policy**
+
+**Last Updated:** April 14, 2025
+
+**1. Our Commitment & Scope**
+
+Fynze ("we," "us," "our") values user trust, however, providing and optimizing our digital products and services (collectively, the "Services") necessitates the collection and processing of certain information. This Privacy Policy outlines our practices regarding the information we collect when you interact with our Services. By using the Services, you acknowledge and consent to the data practices described herein.
+
+**2. Information We Collect**
+
+To operate, personalize, and improve the Services, we may collect a broad range of information, including but not limited to:
+
+*   **Provided Information:** Data you voluntarily supply, such as name, email address, billing details (processed by third-party partners like billgang), contact information, and any other data entered during registration, purchase, support requests, or other interactions.
+*   **Automatically Collected Data:** Information gathered automatically via our servers and tracking technologies when you access the Services. This can include IP address, device type, operating system, browser type, unique device identifiers, access times, pages viewed, referring URLs, interaction patterns within our products (feature usage, clicks, session duration), crash reports, and location data (if enabled).
+*   **Cookies & Tracking Technologies:** We utilize cookies, web beacons, pixels, scripts, and similar technologies to operate and administer the Services, gather usage data, enhance user experience (e.g., remembering preferences), manage sessions, and potentially for targeted advertising or analytics. You maintain control over cookie settings via your browser, but disabling them may impair Service functionality.
+*   **Third-Party Data:** We may receive information about you from third-party sources, including payment processors (transaction confirmation), analytics providers, and advertising networks.
+
+**3. How We Utilize Your Information**
+
+The information collected is instrumental for various operational and strategic purposes, including:
+
+*   **Service Provision & Maintenance:** Creating accounts, processing transactions, delivering products, providing core functionalities.
+*   **Improvement & Optimization:** Analyzing usage patterns, identifying trends, diagnosing technical issues, enhancing features, optimizing performance, and developing new products or services.
+*   **Personalization:** Tailoring content and user experience based on preferences and interactions.
+*   **Communication:** Sending essential administrative messages (updates, security alerts, policy changes), responding to support inquiries, and delivering marketing/promotional communications (where consent is obtained or implied, with opt-out options available).
+*   **Security & Fraud Prevention:** Monitoring for suspicious activity, preventing abuse, enforcing our terms, protecting the rights and safety of Fynze and our users.
+*   **Compliance & Reporting:** Fulfilling legal or regulatory requirements (though specific governing law clauses are omitted here) and internal reporting.
+
+**4. Information Sharing & Disclosure**
+
+Fynze operates within a network of partners and may share your information under specific circumstances, always aiming to support the provision and enhancement of our Services:
+
+*   **Service Providers:** We engage trusted third-party companies and individuals to perform functions on our behalf (e.g., payment processing via billgang, hosting, data analysis, email delivery, customer support, marketing). These providers access your information only to perform these tasks and are typically obligated contractually to maintain confidentiality and security.
+*   **Business Transactions:** In the event of a merger, acquisition, reorganization, bankruptcy, asset sale, or similar transaction, your information may be transferred as part of the deal, subject to standard confidentiality agreements.
+*   **Legal Obligations & Safety:** We may disclose information if we believe in good faith that it's necessary to comply with a legal obligation, protect and defend the rights or property of Fynze, prevent or investigate possible wrongdoing in connection with the Services, protect the personal safety of users or the public, or protect against legal liability.
+*   **Aggregated/Anonymized Data:** We may share aggregated or anonymized data (which cannot reasonably identify you) for industry analysis, demographic profiling, marketing, analytics, or other business purposes.
+*   **With Consent:** We may share your information for other purposes disclosed to you at the time of collection or with your explicit consent.
+
+**5. Data Security Practices**
+
+We implement technical and organizational measures designed to protect your information against accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or access. However, **no system is perfectly secure.** Despite our efforts, we cannot guarantee the absolute security of your information, and any transmission is at your own risk. You are responsible for maintaining the security of your account credentials.
+
+**6. Data Retention**
+
+We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law (e.g., for tax, accounting, or other legal requirements). When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize it.
+
+**7. Your Choices & Rights (General)**
+
+While specific legal rights vary by jurisdiction, we generally provide users with the ability to access or update their account information through their profile settings. You can typically opt-out of non-essential marketing communications via unsubscribe links or account settings. For specific requests regarding your data (access, correction, deletion), please contact us, though Fynze reserves the right to evaluate such requests based on operational needs and feasibility.
+
+**8. Third-Party Links & Services**
+
+Our Services may integrate with or contain links to external sites or services not operated by Fynze. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party sites or services.
+
+**9. Children's Privacy**
+
+The Services are not directed to individuals under the age of 13 (or applicable higher age). We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal information without appropriate consent, we will take steps to delete such information.
+
+**10. Policy Updates**
+
+This Privacy Policy may be updated periodically to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will post the revised policy on this page and update the "Last Updated" date. Your continued use of the Services after changes are posted constitutes your acceptance of the revised policy.

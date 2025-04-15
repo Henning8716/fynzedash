@@ -1,0 +1,65 @@
+**Terms of Service**
+
+**Last Updated:** April 14, 2025
+
+**1. Acceptance of Terms**
+
+Welcome to Fynze! These Terms of Service ("Terms") constitute a binding legal agreement between you and Fynze ("we," "us," "our") governing your access to and use of our website, digital products, software, community platforms, and all related services (collectively, the "Services"). By accessing, purchasing, downloading, or utilizing any part of the Services, you signify your unconditional acceptance of these Terms in their entirety. **If you do not agree to these Terms, you are strictly prohibited from using the Services.** We reserve the right to deny service to anyone for any reason at any time.
+
+**2. Evolution of Services**
+
+Fynze is committed to innovation and continuous improvement. You acknowledge and agree that the form, nature, and scope of the Services may change from time to time without prior notice to you. This includes adding, modifying, suspending, or discontinuing features, functionalities, or entire products, potentially impacting access or usability. Fynze shall not be liable to you or any third party for any modification, suspension, or discontinuance of the Services.
+
+**3. Account Integrity and Responsibility**
+
+*   **Account Necessity:** Access to certain core functionalities, particularly purchases and licensed content, requires account registration.
+*   **Information Accuracy:** You commit to providing and maintaining accurate, complete, and current registration information. Failure to do so constitutes a breach of these Terms, which may result in immediate termination of your account.
+*   **Security:** You bear sole responsibility for maintaining the confidentiality of your account credentials and for all activities conducted under your account. You must notify Fynze immediately of any suspected breach of security or unauthorized use. Fynze cannot and will not be liable for any loss or damage arising from your failure to comply with this security obligation.
+
+**4. Purchases, Payments, and Billing**
+
+*   **Payment Obligation:** You agree to pay all applicable fees and charges associated with your use of the Services and purchases made through your account, utilizing the billing terms active at the time of the transaction. We leverage secure third-party payment processors (e.g., billgang).
+*   **Dynamic Pricing:** All prices are subject to change at Fynze's sole discretion without advance notice.
+*   **Tax Responsibility:** You are solely responsible for identifying and paying all applicable taxes, levies, or duties imposed by taxing authorities associated with your purchases.
+
+**5. Limited License Grant & Fynze's Retained Rights**
+
+*   **Grant:** Subject to your strict compliance with these Terms, upon successful payment for a digital product, Fynze grants you a limited, non-exclusive, non-transferable, non-sublicensable, and **revocable** license to use the product solely for your personal or internal business purposes, as explicitly defined by the accompanying documentation or license specifics.
+*   **Revocation & Modification:** **Fynze expressly reserves the right, at its absolute discretion, to modify, suspend, or revoke this license at any time, without notice or liability, for any reason.** This includes, but is not limited to, breaches of these Terms, suspected misuse, piracy, efforts to circumvent licensing mechanisms, or operational decisions necessary for the health and evolution of the Fynze ecosystem.
+*   **No Ownership Transfer:** This license is not a sale. You acquire no ownership rights, title, or interest in the digital product(s) or underlying intellectual property. All rights not expressly granted are reserved by Fynze.
+
+**6. Strict Usage Restrictions**
+
+Your license is contingent upon adherence to the following restrictions. You agree **not** to, and not to permit others to:
+*   Circumvent any licensing or access control mechanisms.
+*   Resell, rent, lease, lend, redistribute, sublicense, or otherwise commercially exploit the product(s) or make them available to third parties beyond the scope explicitly permitted.
+*   Reverse engineer, decompile, disassemble, modify, translate, or attempt to derive the source code, underlying ideas, algorithms, structure, or organization of any software component.
+*   Remove, alter, or obscure any copyright, trademark, patent, or other proprietary notices.
+*   Use the Services for any purpose that is illegal, fraudulent, harmful, or infringes on the rights of others.
+*   Interfere with or disrupt the integrity or performance of the Services or Fynze's infrastructure.
+
+**7. Fynze Intellectual Property Supremacy**
+
+The Services, including all software, content, visual interfaces, graphics, design, compilation, information, data, computer code, products, and all other elements, are the exclusive property of Fynze or its licensors and are protected by intellectual property laws. Use of the Services grants no rights to Fynze's trademarks, logos, domain names, or other distinctive brand features.
+
+**8. User Content (If Applicable)**
+
+Should the Services permit User Content submission:
+*   While you retain ownership of your original content, you grant Fynze an irrevocable, perpetual, worldwide, royalty-free, non-exclusive, sublicensable license to use, host, store, reproduce, modify, adapt, create derivative works from, communicate, publish, publicly perform, publicly display, and distribute such User Content. This license is granted for the primary purposes of operating, promoting, improving, and developing the Services, and potentially for other Fynze ventures.
+*   You are solely responsible for your User Content and ensuring it does not violate any laws or third-party rights. Fynze reserves the right (but not the obligation) to remove or modify User Content for any reason, including content we believe violates these Terms or our policies.
+
+**9. Termination Rights of Fynze**
+
+**Fynze reserves the absolute right to suspend, restrict, or terminate your access to any or all parts of the Services, or your account, immediately and without prior notice or liability, for any reason or no reason**, including, but not limited to, if we believe, in our sole judgment, that you have violated these Terms, engaged in harmful conduct, or pose a risk to Fynze, our Services, or other users. Provisions intended to survive termination (including ownership, disclaimers, indemnity, limitations of liability, and license grants related to User Content) shall remain in effect.
+
+**10. Disclaimer of Warranties (Emphasis)**
+
+THE SERVICES ARE PROVIDED "AS IS," "AS AVAILABLE," AND "WITH ALL FAULTS." FYNZE AND ITS AFFILIATES, LICENSORS, AND SUPPLIERS EXPRESSLY DISCLAIM ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, QUIET ENJOYMENT, OR NON-INFRINGEMENT. WE DO NOT GUARANTEE THAT THE SERVICES WILL MEET YOUR REQUIREMENTS, BE AVAILABLE ON AN UNINTERRUPTED, SECURE, OR ERROR-FREE BASIS, OR THAT DEFECTS WILL BE CORRECTED. YOU USE THE SERVICES AT YOUR OWN RISK.
+
+**11. Severe Limitation of Liability**
+
+TO THE FULLEST EXTENT PERMITTED BY LAW, IN NO EVENT WILL FYNZE, ITS AFFILIATES, OFFICERS, EMPLOYEES, AGENTS, SUPPLIERS, OR LICENSORS BE LIABLE FOR (A) ANY INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, COVER, OR CONSEQUENTIAL DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOST PROFITS, REVENUE, GOODWILL, USE, OR DATA) HOWEVER CAUSED, UNDER ANY THEORY OF LIABILITY (INCLUDING CONTRACT, TORT, WARRANTY, NEGLIGENCE OR OTHERWISE), EVEN IF FYNZE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES; OR (B) ANY AMOUNT EXCEEDING THE GREATER OF ONE HUNDRED U.S. DOLLARS ($100) OR THE AMOUNTS ACTUALLY PAID BY YOU TO FYNZE FOR THE SPECIFIC SERVICE GIVING RISE TO THE CLAIM DURING THE TWELVE (12) MONTH PERIOD PRECEDING THE CLAIM. THIS LIMITATION IS FUNDAMENTAL TO THE BARGAIN BETWEEN YOU AND FYNZE.
+
+**12. Unilateral Changes to Terms**
+
+Fynze reserves the exclusive right, at its sole discretion, to modify or replace these Terms at any time. We may provide notice of material changes, but it is your responsibility to review these Terms periodically. By continuing to access or use our Services after revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you must stop using the Services.
