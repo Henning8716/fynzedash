@@ -20,8 +20,8 @@ import logoImg from "../assets/logo.png";
 // Define navigation items with section IDs
 const navItems = [
   { icon: Home, label: "Home", href: "#hero" },
-  { icon: Shield, label: "HWID Spoofer", href: "#product" },
   { icon: Zap, label: "Features", href: "#features" },
+  { icon: Shield, label: "HWID Spoofer", href: "#product" },
   { icon: ArrowLeftRight, label: "Pricing", href: "#pricing" },
   { icon: FileText, label: "FAQ", href: "#faq" },
   { icon: HelpCircle, label: "Support", href: "#contact" },
