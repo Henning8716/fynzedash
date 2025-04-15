@@ -715,7 +715,7 @@ export default function Dashboard() {
                           />
                         </svg>
                       </span>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -825,7 +825,7 @@ export default function Dashboard() {
                             </svg>
                           </span>
                         </div>
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -995,7 +995,7 @@ export default function Dashboard() {
                 and is the last HWID spoofer you'll ever need.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row justify-center gap-6 reveal-element reveal-bottom">
-                <button
+                <a
                   onClick={() => window.scrollTo({top: document.getElementById('pricing').offsetTop, behavior: 'smooth'})}
                   className="relative overflow-hidden group rounded-lg"
                 >
@@ -1022,7 +1022,7 @@ export default function Dashboard() {
                   </div>
                 </a>
 
-                <button
+                <a
                   className="relative overflow-hidden group rounded-lg"
                   onClick={() =>
                     window.scrollTo({
@@ -1038,7 +1038,7 @@ export default function Dashboard() {
                       <SiDiscord className="ml-2 h-5 w-5 transform group-hover:scale-110 transition-transform duration-300" />
                     </span>
                   </div>
-                </button>
+                </a>
               </div>
             </div>
           </div>
