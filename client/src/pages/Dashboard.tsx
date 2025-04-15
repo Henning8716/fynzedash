@@ -690,11 +690,11 @@ export default function Dashboard() {
                   </ul>
 
                   <div className="mt-8">
-                    <button
-                      className="w-full group/btn relative py-3 px-4 rounded-lg overflow-hidden transition-all duration-300"
-                      data-billgang-product-path="24h"
-                      data-billgang-domain="fynze.bgng.io"
-                      type="button"
+                    <a
+                      href="https://buy.fynze.net"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full group/btn relative py-3 px-4 rounded-lg overflow-hidden transition-all duration-300 block"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 border border-slate-600/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 w-0 bg-gradient-to-r from-blue-500/20 to-transparent transition-all duration-500 group-hover/btn:w-full"></div>
@@ -798,11 +798,11 @@ export default function Dashboard() {
                     </ul>
 
                     <div className="mt-8">
-                      <button
-                        className="relative w-full overflow-hidden group/btn"
-                        data-billgang-product-path="perm"
-                        data-billgang-domain="fynze.bgng.io"
-                        type="button"
+                      <a
+                        href="https://buy.fynze.net"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative w-full overflow-hidden group/btn block"
                       >
                         <div className="absolute inset-0 w-3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover/btn:w-full transition-all duration-500"></div>
                         <div className="relative z-10 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover/btn:from-blue-500 group-hover/btn:to-blue-600 transition-all duration-300 shadow-md">
@@ -995,8 +995,8 @@ export default function Dashboard() {
                 and is the last HWID spoofer you'll ever need.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row justify-center gap-6 reveal-element reveal-bottom">
-                <a
-                  href="#plans"
+                <button
+                  onClick={() => window.scrollTo({top: document.getElementById('pricing').offsetTop, behavior: 'smooth'})}
                   className="relative overflow-hidden group rounded-lg"
                 >
                   <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover:w-full transition-all duration-700 ease-in-out"></div>
