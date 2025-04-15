@@ -1,13 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { cn } from "@/lib/utils";
-import { Check, Star, Shield, Zap, Award, Clock, Cpu, Database } from "lucide-react";
+import { Check, Star, Shield, Zap, Award, Clock, Cpu, Database, X } from "lucide-react";
 import { SiDiscord } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import Sidebar from "@/components/Sidebar";
 import FeatureCard from "@/components/FeatureCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import FaqItem from "@/components/FaqItem";
+import PolicyDialog from "@/components/PolicyDialog";
 import setupScrollReveal from "@/lib/scrollReveal";
 
 // Import product images
@@ -16,6 +17,31 @@ import spoofScreen from "../assets/spoof_screen.png";
 import logoBg from "../assets/logo_bg.png";
 
 export default function Dashboard() {
+  // State for policy dialogs
+  const [policyDialog, setPolicyDialog] = useState<{
+    isOpen: boolean;
+    type: 'terms' | 'privacy' | 'refund';
+  }>({
+    isOpen: false,
+    type: 'terms'
+  });
+
+  // Function to open policy dialog
+  const openPolicyDialog = (type: 'terms' | 'privacy' | 'refund') => {
+    setPolicyDialog({
+      isOpen: true,
+      type
+    });
+  };
+
+  // Function to close policy dialog
+  const closePolicyDialog = () => {
+    setPolicyDialog(prev => ({
+      ...prev,
+      isOpen: false
+    }));
+  };
+
   // Initialize scroll reveal animations once component is mounted
   useEffect(() => {
     const scrollReveal = setupScrollReveal();
@@ -259,6 +285,134 @@ export default function Dashboard() {
                   description={feature.description}
                 />
               ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* Comparison Section */}
+        <section id="comparison" className="py-16 relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/10 via-transparent to-indigo-950/10"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+            <div className="text-center mb-16 reveal-element reveal-bottom">
+              <h2 className="text-3xl sm:text-4xl font-bold">
+                How We <span className="gradient-text">Compare</span>
+              </h2>
+              <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
+                See why our technology outperforms competitors with our permanent hardware ID modification
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+              {/* Competitors Column */}
+              <div className="relative p-6 rounded-xl bg-gradient-to-b from-slate-800/30 to-slate-900/70 border border-slate-700 reveal-element reveal-left">
+                <div className="absolute -top-4 -left-4 p-0.5 rounded-full bg-gradient-to-r from-red-600 to-red-400">
+                  <div className="px-4 py-1 rounded-full bg-slate-950/95 text-red-300 text-sm font-medium">
+                    COMPETITORS
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-bold text-slate-200 mb-6 mt-2">Temporary Masking Solutions</h3>
+                
+                <ul className="space-y-5">
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mr-3 mt-0.5">
+                      <X className="h-3 w-3 text-red-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-300">Only Mask Hardware IDs</h4>
+                      <p className="text-sm text-slate-400 mt-1">Simply hide identifiers temporarily rather than permanently modifying them</p>
+                    </div>
+                  </li>
+                  
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mr-3 mt-0.5">
+                      <X className="h-3 w-3 text-red-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-300">Reset After Reboot</h4>
+                      <p className="text-sm text-slate-400 mt-1">Protection is lost after system restart, requiring reapplication</p>
+                    </div>
+                  </li>
+                  
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mr-3 mt-0.5">
+                      <X className="h-3 w-3 text-red-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-300">Detectable by Advanced Scans</h4>
+                      <p className="text-sm text-slate-400 mt-1">Modern anti-cheat systems can detect masking attempts</p>
+                    </div>
+                  </li>
+                  
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mr-3 mt-0.5">
+                      <X className="h-3 w-3 text-red-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-300">Limited Support</h4>
+                      <p className="text-sm text-slate-400 mt-1">Often provide minimal documentation and customer assistance</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Fynze Column */}
+              <div className="relative p-6 rounded-xl bg-gradient-to-b from-blue-950/40 to-slate-900/90 border border-blue-800/30 reveal-element reveal-right">
+                <div className="absolute -top-4 -left-4 p-0.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-400">
+                  <div className="px-4 py-1 rounded-full bg-blue-950/95 text-blue-200 text-sm font-medium">
+                    FYNZE
+                  </div>
+                </div>
+                
+                {/* Subtle animated glow effect */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/20 to-cyan-400/20 rounded-xl blur-md opacity-50 pulse-glow"></div>
+                
+                <div className="relative">
+                  <h3 className="text-xl font-bold text-blue-200 mb-6 mt-2">Permanent Modification Technology</h3>
+                  
+                  <ul className="space-y-5">
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 mt-0.5">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-blue-100">Permanently Changes Hardware IDs</h4>
+                        <p className="text-sm text-blue-200/80 mt-1">Uses advanced technology to modify your hardware identifiers at the system level</p>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 mt-0.5">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-blue-100">Survives System Updates</h4>
+                        <p className="text-sm text-blue-200/80 mt-1">Changes persist through reboots, Windows updates, and driver installations</p>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 mt-0.5">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-blue-100">100% Undetectable</h4>
+                        <p className="text-sm text-blue-200/80 mt-1">Makes your system appear genuinely new to all detection methods</p>
+                      </div>
+                    </li>
+                    
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 mt-0.5">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-blue-100">Detailed Documentation & Support</h4>
+                        <p className="text-sm text-blue-200/80 mt-1">Includes comprehensive guides and 24/7 support from hardware ID experts</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -642,7 +796,56 @@ export default function Dashboard() {
             </div>
           </div>
         </footer>
+        {/* Footer with Policy Links */}
+        <footer className="py-8 border-t border-slate-800 bg-gradient-to-b from-slate-950 to-slate-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="mb-4 md:mb-0">
+                <h3 className="text-lg font-bold gradient-text-blue-cyan">Fynze Services</h3>
+                <p className="text-slate-400 text-sm mt-1">© {new Date().getFullYear()} All rights reserved.</p>
+              </div>
+              
+              <div className="flex items-center gap-6">
+                <button 
+                  onClick={() => openPolicyDialog('terms')}
+                  className="text-sm text-slate-400 hover:text-blue-400 transition-colors"
+                >
+                  Terms of Service
+                </button>
+                <button 
+                  onClick={() => openPolicyDialog('privacy')}
+                  className="text-sm text-slate-400 hover:text-blue-400 transition-colors"
+                >
+                  Privacy Policy
+                </button>
+                <button 
+                  onClick={() => openPolicyDialog('refund')}
+                  className="text-sm text-slate-400 hover:text-blue-400 transition-colors"
+                >
+                  Refund Policy
+                </button>
+                
+                <a 
+                  href="https://discord.gg/gxw4GaKkGp" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-blue-400 transition-colors"
+                >
+                  <SiDiscord className="text-lg" />
+                  <span>Discord</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
       </main>
+      
+      {/* Policy dialog */}
+      <PolicyDialog 
+        type={policyDialog.type}
+        isOpen={policyDialog.isOpen}
+        onClose={closePolicyDialog}
+      />
     </div>
   );
 }
