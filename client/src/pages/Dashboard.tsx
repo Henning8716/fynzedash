@@ -513,29 +513,43 @@ export default function Dashboard() {
                   
                   <ul className="mt-6 space-y-4">
                     <li className="flex">
-                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mr-2" />
-                      <span>Full HWID spoofing capabilities</span>
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center mr-2">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
+                      <span className="text-slate-300">Full HWID spoofing capabilities</span>
                     </li>
                     <li className="flex">
-                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mr-2" />
-                      <span>24 hours of support</span>
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center mr-2">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
+                      <span className="text-slate-300">Same spoofing technology as lifetime</span>
                     </li>
                     <li className="flex">
-                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mr-2" />
-                      <span>Changes persist through reboots</span>
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center mr-2">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
+                      <span className="text-slate-300">Permanent ID changes</span>
                     </li>
                     <li className="flex">
-                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mr-2" />
-                      <span>One-time payment</span>
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center mr-2">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
+                      <span className="text-slate-300">24 hours of support</span>
                     </li>
                   </ul>
                   
                   <div className="mt-8">
                     <button 
-                      className="w-full group/btn relative py-3 px-4 rounded-lg overflow-hidden transition-all duration-300 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 border border-slate-600/50"
+                      className="w-full group/btn relative py-3 px-4 rounded-lg overflow-hidden transition-all duration-300"
                     >
-                      <div className="absolute inset-0 w-full bg-gradient-to-r from-blue-500/20 to-transparent transition-opacity duration-300 opacity-0 group-hover/btn:opacity-100"></div>
-                      <span className="relative z-10 text-blue-300 group-hover/btn:text-blue-200 transition-colors duration-300">Select Plan</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 border border-slate-600/50 transition-all duration-300"></div>
+                      <div className="absolute inset-0 w-0 bg-gradient-to-r from-blue-500/20 to-transparent transition-all duration-500 group-hover/btn:w-full"></div>
+                      <span className="relative z-10 text-blue-300 group-hover/btn:text-blue-200 transition-colors duration-300 flex items-center justify-center">
+                        Select 24-Hour Plan
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -734,7 +748,8 @@ export default function Dashboard() {
               </h2>
               <p className="mt-4 text-slate-300 max-w-2xl mx-auto">
                 Join thousands of satisfied users who trust Fynze for their HWID spoofing needs.
-                Our solution is the last one you'll ever need.
+                Our solution includes <span className="gradient-text font-semibold">insane, detailed documentation</span> and
+                is the last HWID spoofer you'll ever need.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row justify-center gap-6 reveal-element reveal-bottom">
                 <button className="relative overflow-hidden group rounded-lg">
@@ -764,38 +779,7 @@ export default function Dashboard() {
           </div>
         </section>
         
-        {/* Footer */}
-        <footer className="py-8 border-t border-slate-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <p className="text-slate-400 text-sm">
-                &copy; {new Date().getFullYear()} Fynze Services. All rights reserved.
-              </p>
-            </div>
-            <div className="flex items-center gap-4">
-              <a 
-                href="https://discord.gg/gxw4GaKkGp" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-blue-400 transition"
-              >
-                Discord
-              </a>
-              <a 
-                href="#" 
-                className="text-slate-400 hover:text-blue-400 transition"
-              >
-                Terms of Service
-              </a>
-              <a 
-                href="#" 
-                className="text-slate-400 hover:text-blue-400 transition"
-              >
-                Privacy Policy
-              </a>
-            </div>
-          </div>
-        </footer>
+
         {/* Footer with Policy Links */}
         <footer className="py-8 border-t border-slate-800 bg-gradient-to-b from-slate-950 to-slate-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
