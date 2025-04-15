@@ -2,6 +2,266 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Gradient Text */
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #00a3ff, #0066ff, #0088cc);
+}
+
+.gradient-text-blue-purple {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #00a3ff, #6b46c1);
+}
+
+.gradient-text-blue-cyan {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(to right, #00a3ff, #06b6d4);
+}
+
+/* Gradient Backgrounds */
+.gradient-bg {
+  background: linear-gradient(45deg, #0f172a, #1e293b);
+}
+
+.gradient-bg-dark {
+  background: linear-gradient(45deg, #020617, #0f172a);
+}
+
+.gradient-bg-blue {
+  background: linear-gradient(135deg, rgba(3, 105, 161, 0.8), rgba(2, 50, 82, 0.8));
+}
+
+.gradient-bg-button {
+  background: linear-gradient(90deg, #0284c7, #0ea5e9, #38bdf8);
+  background-size: 200% auto;
+  transition: background-position 0.5s ease;
+}
+
+.gradient-bg-button:hover {
+  background-position: right center;
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 0.75rem; /* Matches theme.json radius */
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  background-image: linear-gradient(45deg, #0f172a, #1e293b);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #0284c7, #38bdf8);
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(2, 132, 199, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.7);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animated grid background */
+.grid-pattern {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+  animation: grid-scroll 15s linear infinite;
+}
+
+@keyframes grid-scroll {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
+}
+
+/* Glow effect */
+.glow-effect {
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+}
+
+/* Gradient borders */
+.gradient-border-hover {
+  position: relative;
+  border-radius: 0.75rem;
+  background-clip: padding-box;
+  border: 1px solid rgba(30, 41, 59, 0.5);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0284c7, #38bdf8);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.gradient-border-hover:hover {
+  border-color: rgba(14, 165, 233, 0.3);
+}
+
+.gradient-border-hover:hover::after {
+  transform: scaleX(1);
+}
+
+/* Blur behind effect */
+.blur-behind {
+  position: relative;
+}
+
+.blur-behind::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: rgba(14, 165, 233, 0.1);
+  border-radius: 50%;
+  filter: blur(30px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.blur-behind:hover::before {
+  opacity: 1;
+}
+
+/* ScrollReveal classes */
+.reveal-element {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-element.revealed {
+  opacity: 1;
+}
+
+.reveal-left.revealed {
+  animation: slide-in-left 0.6s forwards;
+}
+
+.reveal-right.revealed {
+  animation: slide-in-right 0.6s forwards;
+}
+
+.reveal-bottom.revealed {
+  animation: slide-in-bottom 0.6s forwards;
+}
+
+.reveal-scale.revealed {
+  animation: scale-in 0.6s forwards;
+}
+
+/* Staggered reveal for children */
+.stagger-children > * {
+  opacity: 0;
+}
+
+.stagger-children.revealed > *:nth-child(1) {
+  animation: slide-in-bottom 0.4s 0.1s forwards;
+}
+
+.stagger-children.revealed > *:nth-child(2) {
+  animation: slide-in-bottom 0.4s 0.2s forwards;
+}
+
+.stagger-children.revealed > *:nth-child(3) {
+  animation: slide-in-bottom 0.4s 0.3s forwards;
+}
+
+.stagger-children.revealed > *:nth-child(4) {
+  animation: slide-in-bottom 0.4s 0.4s forwards;
+}
+
+.stagger-children.revealed > *:nth-child(5) {
+  animation: slide-in-bottom 0.4s 0.5s forwards;
+}
+
+.stagger-children.revealed > *:nth-child(n+6) {
+  animation: slide-in-bottom 0.4s 0.6s forwards;
+}
+
 @layer base {
   * {
     @apply border-border;
