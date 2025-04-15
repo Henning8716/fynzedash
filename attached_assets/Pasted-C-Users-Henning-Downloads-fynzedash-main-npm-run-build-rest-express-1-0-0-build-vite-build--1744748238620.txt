@@ -1,0 +1,54 @@
+C:\Users\Henning\Downloads\fynzedash-main>npm run build
+
+> rest-express@1.0.0 build
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+vite v5.4.14 building for production...
+transforming (3) src\main.tsxBrowserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+✓ 10 modules transformed.
+x Build failed in 1.03s
+error during build:
+[vite:esbuild] Transform failed with 3 errors:
+C:/Users/Henning/Downloads/fynzedash-main/client/src/pages/Dashboard.tsx:718:22: ERROR: Unexpected closing "button" tag does not match opening "a" tag
+C:/Users/Henning/Downloads/fynzedash-main/client/src/pages/Dashboard.tsx:828:24: ERROR: Unexpected closing "button" tag does not match opening "a" tag
+C:/Users/Henning/Downloads/fynzedash-main/client/src/pages/Dashboard.tsx:1023:18: ERROR: Unexpected closing "a" tag does not match opening "button" tag
+file: C:/Users/Henning/Downloads/fynzedash-main/client/src/pages/Dashboard.tsx:718:22
+
+Unexpected closing "button" tag does not match opening "a" tag
+716|                          </svg>
+717|                        </span>
+718|                      </button>
+   |                        ^
+719|                    </div>
+720|                  </div>
+
+Unexpected closing "button" tag does not match opening "a" tag
+826|                            </span>
+827|                          </div>
+828|                        </button>
+   |                          ^
+829|                      </div>
+830|                    </div>
+
+Unexpected closing "a" tag does not match opening "button" tag
+1021|                      </span>
+1022|                    </div>
+1023|                  </a>
+   |                    ^
+1024|
+1025|                  <button
+
+    at failureErrorWithLog (C:\Users\Henning\Downloads\fynzedash-main\node_modules\vite\node_modules\esbuild\lib\main.js:1472:15)
+    at C:\Users\Henning\Downloads\fynzedash-main\node_modules\vite\node_modules\esbuild\lib\main.js:755:50
+    at responseCallbacks.<computed> (C:\Users\Henning\Downloads\fynzedash-main\node_modules\vite\node_modules\esbuild\lib\main.js:622:9)
+    at handleIncomingPacket (C:\Users\Henning\Downloads\fynzedash-main\node_modules\vite\node_modules\esbuild\lib\main.js:677:12)
+    at Socket.readFromStdout (C:\Users\Henning\Downloads\fynzedash-main\node_modules\vite\node_modules\esbuild\lib\main.js:600:7)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+C:\Users\Henning\Downloads\fynzedash-main>
