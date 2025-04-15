@@ -155,11 +155,8 @@ export default function Sidebar() {
                         "w-full flex items-center py-2 px-3 rounded-md",
                         "transition-all duration-300 ease-in-out",
                         "font-medium text-sm",
-                        isActive 
-                          ? "gradient-bg-button text-white" 
-                          : "hover:bg-slate-800/50 text-slate-400 hover:text-slate-200",
-                        isExpanded ? "justify-start" : "justify-center",
-                        isActive && "shadow-md shadow-blue-900/20"
+                        "hover:bg-slate-800/50 text-slate-400 hover:text-slate-200",
+                        isExpanded ? "justify-start" : "justify-center"
                       )}
                     >
                       <div className="relative">
@@ -168,12 +165,10 @@ export default function Sidebar() {
                           className={cn(
                             "transition-all duration-300", 
                             isExpanded ? "mr-2" : "mx-auto",
-                            isActive ? "text-white" : "text-slate-400"
+                            "text-slate-400 group-hover:text-blue-400"
                           )} 
                         />
-                        {isActive && (
-                          <span className="absolute -inset-1 bg-blue-400/20 rounded-full blur-sm opacity-70 animate-pulse"></span>
-                        )}
+                        <span className="absolute -inset-1 bg-blue-400/10 rounded-full blur-sm opacity-0 group-hover:opacity-70 transition-opacity duration-300"></span>
                       </div>
                       {isExpanded && <span>{item.label}</span>}
                     </a>

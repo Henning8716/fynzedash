@@ -26,34 +26,34 @@ export default function Dashboard() {
 
   const features = [
     {
-      icon: "🛡️",
-      title: "Hardware ID Masking",
-      description: "Completely masks all hardware identifiers including serial numbers, MAC addresses, and device IDs."
+      icon: Shield,
+      title: "Permanent Protection",
+      description: "Our spoofer permanently changes your hardware IDs, ensuring long-term protection against HWID bans and VPN kicks."
     },
     {
-      icon: "🔌",
-      title: "Network Signature Cloaking",
-      description: "Modifies network signatures to prevent tracking and identification based on connection patterns."
+      icon: Zap,
+      title: "Undetectable Technology",
+      description: "Advanced spoofing methods that remain undetected by anti-cheat systems and hardware scanners."
     },
     {
-      icon: "🧹",
-      title: "Registry Cleansing",
-      description: "Removes all traces of previous hardware identifiers from the Windows Registry."
+      icon: Clock,
+      title: "24/7 Elite Support",
+      description: "Our dedicated team provides around-the-clock assistance for any questions or issues you might have."
     },
     {
-      icon: "👆",
-      title: "Browser Fingerprint Protection",
-      description: "Prevents browser fingerprinting methods from identifying your system across websites."
+      icon: Database,
+      title: "Secure Implementation",
+      description: "Fynze's technology is designed with security in mind, ensuring your system remains protected and stable."
     },
     {
-      icon: "🎮",
-      title: "Anti-Cheat Compatibility",
-      description: "Specially designed to work alongside anti-cheat systems without triggering false flags."
+      icon: Award,
+      title: "Regular Updates",
+      description: "Continuous updates to stay ahead of detection methods and ensure permanent effectiveness."
     },
     {
-      icon: "☁️",
-      title: "Cloud Configuration",
-      description: "Securely stores your spoofing configurations in the cloud for easy restoration and updates."
+      icon: Cpu,
+      title: "Instant Activation",
+      description: "One-click activation gets you protected immediately with no complicated setup process."
     }
   ];
 
@@ -165,21 +165,27 @@ export default function Dashboard() {
                 </div>
                 
                 <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 reveal-element reveal-bottom">
-                  <div className="p-4 rounded-lg gradient-border">
+                  <div className="p-4 rounded-lg gradient-border hover:shadow-md hover:shadow-blue-900/20 transition-all duration-300 hover:border-blue-500/30">
                     <div className="flex items-center justify-center lg:justify-start">
-                      <Check className="w-5 h-5 text-emerald-400 mr-2" />
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
                       <span className="text-slate-200">100% Undetectable</span>
                     </div>
                   </div>
-                  <div className="p-4 rounded-lg gradient-border">
+                  <div className="p-4 rounded-lg gradient-border hover:shadow-md hover:shadow-blue-900/20 transition-all duration-300 hover:border-blue-500/30">
                     <div className="flex items-center justify-center lg:justify-start">
-                      <Check className="w-5 h-5 text-emerald-400 mr-2" />
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
                       <span className="text-slate-200">Lifetime Updates</span>
                     </div>
                   </div>
-                  <div className="p-4 rounded-lg gradient-border">
+                  <div className="p-4 rounded-lg gradient-border hover:shadow-md hover:shadow-blue-900/20 transition-all duration-300 hover:border-blue-500/30">
                     <div className="flex items-center justify-center lg:justify-start">
-                      <Check className="w-5 h-5 text-emerald-400 mr-2" />
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                        <Check className="h-3 w-3 text-blue-400" />
+                      </div>
                       <span className="text-slate-200">24/7 Support</span>
                     </div>
                   </div>
