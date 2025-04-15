@@ -120,8 +120,9 @@ export default function Dashboard() {
       
       <main className="flex-1 lg:ml-16">
         {/* Hero Section */}
-        <section className="relative overflow-hidden grid-pattern py-16 lg:py-24">
+        <section id="hero" className="relative overflow-hidden grid-pattern py-16 lg:py-24">
           <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-transparent to-indigo-950/10"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
             <div className="flex flex-col lg:flex-row items-center gap-10">
               <div className="lg:w-1/2 text-center lg:text-left">
@@ -311,12 +312,15 @@ export default function Dashboard() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto relative">
+              {/* Gradient connection between plans */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-40 hidden md:block bg-gradient-to-b from-blue-500/0 via-blue-500/50 to-blue-500/0"></div>
+              
               {/* 24H Plan */}
               <div className="reveal-element reveal-left">
-                <div className="relative p-6 rounded-xl gradient-border hover:scale-[1.02] transition-all duration-300">
+                <div className="relative p-6 rounded-xl bg-gradient-to-b from-slate-800/30 to-slate-900/70 border border-slate-700 hover:border-slate-600 transition-all duration-500 hover:shadow-md hover:shadow-blue-900/20 group">
                   <div className="mb-4">
-                    <h3 className="text-xl font-bold">24H One-Time Plan</h3>
+                    <h3 className="text-xl font-bold text-slate-100 group-hover:text-slate-50 transition-colors duration-300">24H One-Time Plan</h3>
                     <div className="mt-2 flex items-baseline">
                       <span className="text-4xl font-extrabold gradient-text">€9.98</span>
                       <span className="ml-1 text-slate-400">/one-time</span>
@@ -346,58 +350,91 @@ export default function Dashboard() {
                   </ul>
                   
                   <div className="mt-8">
-                    <Button className="w-full gradient-bg-button">
-                      <span>Select Plan</span>
-                    </Button>
+                    <button 
+                      className="w-full group/btn relative py-3 px-4 rounded-lg overflow-hidden transition-all duration-300 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 border border-slate-600/50"
+                    >
+                      <div className="absolute inset-0 w-full bg-gradient-to-r from-blue-500/20 to-transparent transition-opacity duration-300 opacity-0 group-hover/btn:opacity-100"></div>
+                      <span className="relative z-10 text-blue-300 group-hover/btn:text-blue-200 transition-colors duration-300">Select Plan</span>
+                    </button>
                   </div>
                 </div>
               </div>
               
-              {/* Lifetime Plan */}
+              {/* Lifetime Plan - Enhanced */}
               <div className="reveal-element reveal-right">
-                <div className="relative p-6 rounded-xl gradient-border hover:scale-[1.02] transition-all duration-300">
-                  <div className="absolute -top-4 right-4 bg-gradient-to-r from-blue-600 to-purple-600 px-3 py-1 rounded-full text-sm font-medium">
-                    MOST POPULAR
-                  </div>
-                  
-                  <div className="mb-4">
-                    <h3 className="text-xl font-bold">Lifetime Plan</h3>
-                    <div className="mt-2 flex items-baseline">
-                      <span className="text-4xl font-extrabold gradient-text">€19.98</span>
-                      <span className="ml-1 text-slate-400">/lifetime</span>
+                <div className="relative p-8 rounded-xl bg-gradient-to-b from-blue-950/40 to-slate-900/90 border border-blue-800/30 group hover:border-blue-700/40 transition-all duration-500 hover:shadow-lg hover:shadow-blue-900/30 transform">
+                  {/* Best Value Label */}
+                  <div className="absolute -top-4 -right-4 p-0.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-400">
+                    <div className="px-4 py-1 rounded-full bg-blue-950/95 text-blue-200 text-sm font-medium">
+                      BEST VALUE
                     </div>
-                    <p className="mt-2 text-sm text-slate-400">
-                      Competitor price: <span className="line-through">€60</span>
-                    </p>
                   </div>
                   
-                  <ul className="mt-6 space-y-4">
-                    <li className="flex">
-                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mr-2" />
-                      <span>Full HWID spoofing capabilities</span>
-                    </li>
-                    <li className="flex">
-                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mr-2" />
-                      <span>Lifetime 24/7 support</span>
-                    </li>
-                    <li className="flex">
-                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mr-2" />
-                      <span>Unlimited updates</span>
-                    </li>
-                    <li className="flex">
-                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mr-2" />
-                      <span>Priority assistance</span>
-                    </li>
-                    <li className="flex">
-                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mr-2" />
-                      <span>Multi-device support</span>
-                    </li>
-                  </ul>
+                  {/* Subtle animated glow effect */}
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/20 to-cyan-400/20 rounded-xl blur-md opacity-50 group-hover:opacity-70 transition-opacity duration-700 pulse-glow"></div>
                   
-                  <div className="mt-8">
-                    <Button className="w-full gradient-bg-button pulse-glow">
-                      <span>Select Plan</span>
-                    </Button>
+                  <div className="relative">
+                    <div className="mb-5">
+                      <h3 className="text-2xl font-bold text-slate-50 group-hover:text-white transition-colors duration-300">Lifetime Plan</h3>
+                      <div className="mt-3 flex items-baseline">
+                        <span className="text-5xl font-extrabold gradient-text">€19.98</span>
+                        <span className="ml-1 text-blue-300">/lifetime</span>
+                      </div>
+                      <p className="mt-2 text-sm text-blue-300/80">
+                        Competitor price: <span className="line-through">€60</span> <span className="text-blue-200 font-medium">Save €40.02</span>
+                      </p>
+                    </div>
+                    
+                    <ul className="mt-7 space-y-4">
+                      <li className="flex">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                          <Check className="h-4 w-4 text-blue-400" />
+                        </div>
+                        <span className="text-slate-200">Full HWID spoofing capabilities</span>
+                      </li>
+                      <li className="flex">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                          <Check className="h-4 w-4 text-blue-400" />
+                        </div>
+                        <span className="text-slate-200">Lifetime 24/7 support</span>
+                      </li>
+                      <li className="flex">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                          <Check className="h-4 w-4 text-blue-400" />
+                        </div>
+                        <span className="text-slate-200">Unlimited updates</span>
+                      </li>
+                      <li className="flex">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                          <Check className="h-4 w-4 text-blue-400" />
+                        </div>
+                        <span className="text-slate-200">Priority 1-on-1 assistance</span>
+                      </li>
+                      <li className="flex">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                          <Check className="h-4 w-4 text-blue-400" />
+                        </div>
+                        <span className="text-slate-200">Multi-device support (up to 3 devices)</span>
+                      </li>
+                      <li className="flex">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
+                          <Check className="h-4 w-4 text-blue-400" />
+                        </div>
+                        <span className="text-slate-200">Full hardware ID mask customization</span>
+                      </li>
+                    </ul>
+                    
+                    <div className="mt-8">
+                      <button 
+                        className="relative w-full overflow-hidden group/btn"
+                      >
+                        <div className="absolute inset-0 w-3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover/btn:w-full transition-all duration-500"></div>
+                        <div className="relative z-10 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover/btn:from-blue-500 group-hover/btn:to-blue-600 transition-all duration-300 shadow-md">
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-300/20 to-blue-600/0 opacity-0 group-hover/btn:opacity-100 duration-500 bg-[length:50%_100%] bg-no-repeat bg-left group-hover/btn:bg-right transition-all"></div>
+                          <span className="font-medium text-white">Get Lifetime Access</span>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -405,27 +442,76 @@ export default function Dashboard() {
           </div>
         </section>
         
-        {/* Testimonials Section */}
-        <section className="py-16 bg-slate-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Technology Showcase Section replacing Testimonials */}
+        <section className="py-16 bg-slate-900 relative overflow-hidden">
+          <div className="absolute inset-0 grid-pattern opacity-20"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
             <div className="text-center mb-16 reveal-element reveal-bottom">
               <h2 className="text-3xl sm:text-4xl font-bold">
-                Client <span className="gradient-text">Testimonials</span>
+                Advanced <span className="gradient-text">Technology</span>
               </h2>
               <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
-                Don't just take our word for it - hear what our users have to say
+                Unmatched security features that set us apart from competitors
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <TestimonialCard 
-                  key={index}
-                  rating={testimonial.rating}
-                  text={testimonial.text}
-                  author={testimonial.author}
-                />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {/* Technology Item 1 */}
+              <div className="reveal-element reveal-scale bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-800 hover:border-blue-500/30 transition-all duration-300 group">
+                <div className="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-all duration-300">
+                  <Cpu className="w-7 h-7 text-blue-400 group-hover:text-blue-300" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 gradient-text-blue-cyan">Deep Hardware Modification</h3>
+                <p className="text-slate-300">Our technology modifies your hardware IDs at the firmware level, creating permanent changes that persist through updates and reboots.</p>
+                
+                <div className="mt-6 pt-4 border-t border-slate-800">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-slate-400">Modification Depth</span>
+                    <span className="text-sm text-blue-400">Firmware Level</span>
+                  </div>
+                  <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full" style={{width: '95%'}}></div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Technology Item 2 */}
+              <div className="reveal-element reveal-scale bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-800 hover:border-blue-500/30 transition-all duration-300 group">
+                <div className="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-all duration-300">
+                  <Shield className="w-7 h-7 text-blue-400 group-hover:text-blue-300" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 gradient-text-blue-cyan">Intelligent HWID Randomization</h3>
+                <p className="text-slate-300">Our AI-driven algorithm creates believable, consistent hardware profiles that appear genuine to even the most sophisticated detection systems.</p>
+                
+                <div className="mt-6 pt-4 border-t border-slate-800">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-slate-400">Detection Evasion</span>
+                    <span className="text-sm text-blue-400">99.8% Success</span>
+                  </div>
+                  <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full" style={{width: '97%'}}></div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Technology Item 3 */}
+              <div className="reveal-element reveal-scale bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-800 hover:border-blue-500/30 transition-all duration-300 group">
+                <div className="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-all duration-300">
+                  <Database className="w-7 h-7 text-blue-400 group-hover:text-blue-300" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 gradient-text-blue-cyan">Quantum-Resistant Encryption</h3>
+                <p className="text-slate-300">All your hardware data is secured with future-proof encryption that protects against even next-generation cracking attempts.</p>
+                
+                <div className="mt-6 pt-4 border-t border-slate-800">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-slate-400">Security Level</span>
+                    <span className="text-sm text-blue-400">Military Grade</span>
+                  </div>
+                  <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full" style={{width: '100%'}}></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

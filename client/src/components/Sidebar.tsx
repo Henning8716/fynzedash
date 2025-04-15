@@ -1,5 +1,4 @@
-import { Link, useLocation } from "wouter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -18,20 +17,73 @@ import {
 
 import logoImg from "../assets/logo.png";
 
+// Define navigation items with section IDs
 const navItems = [
-  { icon: Home, label: "Dashboard", href: "/" },
-  { icon: Shield, label: "HWID Spoofer", href: "/spoofer" },
-  { icon: Zap, label: "Features", href: "/features" },
-  { icon: ArrowLeftRight, label: "Pricing", href: "/pricing" },
-  { icon: FileText, label: "FAQ", href: "/faq" },
-  { icon: MessageSquare, label: "Testimonials", href: "/testimonials" },
-  { icon: HelpCircle, label: "Support", href: "/support" },
+  { icon: Home, label: "Home", href: "#hero" },
+  { icon: Shield, label: "HWID Spoofer", href: "#product" },
+  { icon: Zap, label: "Features", href: "#features" },
+  { icon: ArrowLeftRight, label: "Pricing", href: "#pricing" },
+  { icon: FileText, label: "FAQ", href: "#faq" },
+  { icon: HelpCircle, label: "Support", href: "#contact" },
 ];
 
 export default function Sidebar() {
-  const [location] = useLocation();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("#hero");
+
+  // Function to handle smooth scrolling
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    
+    // Close mobile menu if open
+    if (isMobileOpen) setIsMobileOpen(false);
+    
+    const section = document.querySelector(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      
+      // Update URL hash without scroll jump
+      window.history.pushState(null, '', sectionId);
+      
+      // Update active section
+      setActiveSection(sectionId);
+    }
+  };
+
+  // Intersection observer to update active section on scroll
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-100px 0px -50%',
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Get the id of the section
+          const id = `#${entry.target.id}`;
+          setActiveSection(id);
+          
+          // Update URL without scroll
+          if (window.location.hash !== id) {
+            window.history.replaceState(null, '', id);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+    // Target all sections with IDs
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach(section => observer.observe(section));
+
+    return () => {
+      sections.forEach(section => observer.unobserve(section));
+    };
+  }, []);
 
   return (
     <>
@@ -61,7 +113,7 @@ export default function Sidebar() {
           "fixed top-0 left-0 z-40 h-full gradient-bg-dark border-r border-slate-800",
           "transition-all duration-300 ease-in-out",
           "flex flex-col gap-1 py-4",
-          isExpanded ? "w-56" : "w-16",
+          isExpanded ? "w-52" : "w-16",
           isMobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
       >
@@ -91,25 +143,40 @@ export default function Sidebar() {
           <TooltipProvider>
             {navItems.map((item) => {
               const Icon = item.icon;
-              const isActive = location === item.href;
+              const isActive = activeSection === item.href;
               
               return (
                 <Tooltip key={item.href} delayDuration={0}>
                   <TooltipTrigger asChild>
-                    <Link href={item.href}>
-                      <Button
-                        variant={isActive ? "default" : "ghost"}
-                        className={cn(
-                          "w-full justify-start flex items-center",
-                          "h-10 px-2 font-medium",
-                          isActive && !isExpanded && "gradient-bg-button glow-effect",
-                          isActive && isExpanded && "gradient-bg-button glow-effect"
+                    <a 
+                      href={item.href}
+                      onClick={(e) => scrollToSection(e, item.href)}
+                      className={cn(
+                        "w-full flex items-center py-2 px-3 rounded-md",
+                        "transition-all duration-300 ease-in-out",
+                        "font-medium text-sm",
+                        isActive 
+                          ? "gradient-bg-button text-white" 
+                          : "hover:bg-slate-800/50 text-slate-400 hover:text-slate-200",
+                        isExpanded ? "justify-start" : "justify-center",
+                        isActive && "shadow-md shadow-blue-900/20"
+                      )}
+                    >
+                      <div className="relative">
+                        <Icon 
+                          size={18} 
+                          className={cn(
+                            "transition-all duration-300", 
+                            isExpanded ? "mr-2" : "mx-auto",
+                            isActive ? "text-white" : "text-slate-400"
+                          )} 
+                        />
+                        {isActive && (
+                          <span className="absolute -inset-1 bg-blue-400/20 rounded-full blur-sm opacity-70 animate-pulse"></span>
                         )}
-                      >
-                        <Icon size={18} className={cn("transition-all", isExpanded ? "mr-2" : "mx-auto")} />
-                        {isExpanded && <span>{item.label}</span>}
-                      </Button>
-                    </Link>
+                      </div>
+                      {isExpanded && <span>{item.label}</span>}
+                    </a>
                   </TooltipTrigger>
                   {!isExpanded && (
                     <TooltipContent side="right">
@@ -132,15 +199,18 @@ export default function Sidebar() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className={cn(
-                    "flex items-center h-10 px-2 rounded-md",
-                    "text-cyan-400 hover:text-cyan-300",
-                    "transition-all duration-200",
-                    "gradient-border-hover",
+                    "flex items-center h-10 px-3 rounded-md",
+                    "text-blue-400 hover:text-blue-300",
+                    "transition-all duration-300",
+                    "bg-slate-800/40 hover:bg-slate-800/70 border border-slate-700/50 hover:border-blue-700/30",
                     isExpanded ? "justify-start" : "justify-center"
                   )}
                 >
-                  <SiDiscord size={18} className={isExpanded ? "mr-2" : "mx-auto"} />
-                  {isExpanded && <span>Join Discord</span>}
+                  <div className="relative">
+                    <SiDiscord size={18} className={isExpanded ? "mr-2" : "mx-auto"} />
+                    <span className="absolute -inset-1 bg-blue-400/10 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  </div>
+                  {isExpanded && <span>Discord</span>}
                 </a>
               </TooltipTrigger>
               {!isExpanded && (
