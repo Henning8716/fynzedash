@@ -144,7 +144,7 @@ export default function Dashboard() {
   return (
     <div className="flex min-h-screen gradient-bg-dark">
       <Sidebar />
-      
+
       <main className="flex-1 lg:ml-16">
         {/* Hero Section */}
         <section id="hero" className="relative overflow-hidden grid-pattern py-16 lg:py-24">
@@ -162,7 +162,7 @@ export default function Dashboard() {
                   <span className="gradient-text font-semibold"> VPN detection kicks</span>. Our cutting-edge technology
                   provides unmatched protection with 24/7 elite support.
                 </p>
-                
+
                 <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4 reveal-element reveal-bottom">
                   <button className="relative overflow-hidden group rounded-lg">
                     <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover:w-full transition-all duration-700 ease-in-out"></div>
@@ -176,7 +176,7 @@ export default function Dashboard() {
                       </span>
                     </div>
                   </button>
-                  
+
                   <a href="#features" className="relative overflow-hidden group rounded-lg">
                     <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg opacity-0 group-hover:opacity-30 blur-sm transition-opacity duration-300"></div>
                     <div className="relative z-10 py-3 px-7 rounded-lg bg-transparent border border-blue-600/50 group-hover:border-blue-500 transition-all duration-300">
@@ -189,7 +189,7 @@ export default function Dashboard() {
                     </div>
                   </a>
                 </div>
-                
+
                 <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 reveal-element reveal-bottom">
                   <div className="p-4 rounded-lg gradient-border hover:shadow-md hover:shadow-blue-900/20 transition-all duration-300 hover:border-blue-500/30">
                     <div className="flex items-center justify-center lg:justify-start">
@@ -217,7 +217,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="lg:w-1/2 mt-10 lg:mt-0 reveal-element reveal-right">
                 <div className="relative">
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-30"></div>
@@ -233,7 +233,7 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-        
+
         {/* Quote Section */}
         <section id="quote" className="py-14 relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950">
           <div className="absolute inset-0 opacity-5">
@@ -262,7 +262,7 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-        
+
         {/* Features Section */}
         <section id="features" className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -275,7 +275,7 @@ export default function Dashboard() {
                 and bans with our advanced technology
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <FeatureCard 
@@ -288,7 +288,7 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-        
+
         {/* Comparison Section */}
         <section id="comparison" className="py-16 relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-950/10 via-transparent to-indigo-950/10"></div>
@@ -301,7 +301,7 @@ export default function Dashboard() {
                 See why our technology outperforms competitors with our permanent hardware ID modification
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
               {/* Competitors Column */}
               <div className="relative p-6 rounded-xl bg-gradient-to-b from-slate-800/30 to-slate-900/70 border border-slate-700 reveal-element reveal-left">
@@ -310,9 +310,9 @@ export default function Dashboard() {
                     COMPETITORS
                   </div>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-slate-200 mb-6 mt-2">Temporary Masking Solutions</h3>
-                
+
                 <ul className="space-y-5">
                   <li className="flex items-start">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mr-3 mt-0.5">
@@ -323,7 +323,7 @@ export default function Dashboard() {
                       <p className="text-sm text-slate-400 mt-1">Simply hide identifiers temporarily rather than permanently modifying them</p>
                     </div>
                   </li>
-                  
+
                   <li className="flex items-start">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mr-3 mt-0.5">
                       <X className="h-3 w-3 text-red-400" />
@@ -333,7 +333,7 @@ export default function Dashboard() {
                       <p className="text-sm text-slate-400 mt-1">Protection is lost after system restart, requiring reapplication</p>
                     </div>
                   </li>
-                  
+
                   <li className="flex items-start">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mr-3 mt-0.5">
                       <X className="h-3 w-3 text-red-400" />
@@ -343,7 +343,7 @@ export default function Dashboard() {
                       <p className="text-sm text-slate-400 mt-1">Modern anti-cheat systems can detect masking attempts</p>
                     </div>
                   </li>
-                  
+
                   <li className="flex items-start">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center mr-3 mt-0.5">
                       <X className="h-3 w-3 text-red-400" />
@@ -355,7 +355,7 @@ export default function Dashboard() {
                   </li>
                 </ul>
               </div>
-              
+
               {/* Fynze Column */}
               <div className="relative p-6 rounded-xl bg-gradient-to-b from-blue-950/40 to-slate-900/90 border border-blue-800/30 reveal-element reveal-right">
                 <div className="absolute -top-4 -left-4 p-0.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-400">
@@ -363,13 +363,13 @@ export default function Dashboard() {
                     FYNZE
                   </div>
                 </div>
-                
+
                 {/* Subtle animated glow effect */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/20 to-cyan-400/20 rounded-xl blur-md opacity-50 pulse-glow"></div>
-                
+
                 <div className="relative">
                   <h3 className="text-xl font-bold text-blue-200 mb-6 mt-2">Permanent Modification Technology</h3>
-                  
+
                   <ul className="space-y-5">
                     <li className="flex items-start">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 mt-0.5">
@@ -380,7 +380,7 @@ export default function Dashboard() {
                         <p className="text-sm text-blue-200/80 mt-1">Uses advanced technology to modify your hardware identifiers at the system level</p>
                       </div>
                     </li>
-                    
+
                     <li className="flex items-start">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 mt-0.5">
                         <Check className="h-3 w-3 text-blue-400" />
@@ -390,7 +390,7 @@ export default function Dashboard() {
                         <p className="text-sm text-blue-200/80 mt-1">Changes persist through reboots, Windows updates, and driver installations</p>
                       </div>
                     </li>
-                    
+
                     <li className="flex items-start">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 mt-0.5">
                         <Check className="h-3 w-3 text-blue-400" />
@@ -400,7 +400,7 @@ export default function Dashboard() {
                         <p className="text-sm text-blue-200/80 mt-1">Makes your system appear genuinely new to all detection methods</p>
                       </div>
                     </li>
-                    
+
                     <li className="flex items-start">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 mt-0.5">
                         <Check className="h-3 w-3 text-blue-400" />
@@ -416,7 +416,7 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-        
+
         {/* Product Screenshot Section */}
         <section id="product" className="py-20 relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-indigo-950/10 to-slate-900/10"></div>
@@ -434,7 +434,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="lg:w-1/2 reveal-element reveal-right">
                 <h2 className="text-3xl sm:text-4xl font-bold">
                   <span className="gradient-text">Powerful</span> & Easy to Use
@@ -444,7 +444,7 @@ export default function Dashboard() {
                   Designed for both beginners and advanced users, Fynze HWID Spoofer delivers powerful protection
                   without complicated setup.
                 </p>
-                
+
                 <div className="mt-8 space-y-6">
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
@@ -455,7 +455,7 @@ export default function Dashboard() {
                       <p className="text-slate-400">Modifies all hardware identifiers including CPU, GPU, motherboard, and disk drives</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <Zap className="w-6 h-6 text-blue-500" />
@@ -465,7 +465,7 @@ export default function Dashboard() {
                       <p className="text-slate-400">Changes take effect immediately without requiring multiple system reboots</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <Award className="w-6 h-6 text-blue-500" />
@@ -480,7 +480,7 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-        
+
         {/* Pricing Section */}
         <section id="pricing" className="py-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -492,11 +492,11 @@ export default function Dashboard() {
                 Premium protection at a fraction of the cost of our competitors
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto relative">
               {/* Gradient connection between plans */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-40 hidden md:block bg-gradient-to-b from-blue-500/0 via-blue-500/50 to-blue-500/0"></div>
-              
+
               {/* 24H Plan */}
               <div className="reveal-element reveal-left">
                 <div className="relative p-6 rounded-xl bg-gradient-to-b from-slate-800/30 to-slate-900/70 border border-slate-700 hover:border-slate-600 transition-all duration-500 hover:shadow-md hover:shadow-blue-900/20 group">
@@ -510,7 +510,7 @@ export default function Dashboard() {
                       Competitor price: <span className="line-through">€20</span>
                     </p>
                   </div>
-                  
+
                   <ul className="mt-6 space-y-4">
                     <li className="flex">
                       <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center mr-2">
@@ -537,18 +537,19 @@ export default function Dashboard() {
                       <span className="text-slate-300">24 hours of support</span>
                     </li>
                   </ul>
-                  
+
                   <div className="mt-8">
                     <button 
                       className="w-full group/btn relative py-3 px-4 rounded-lg overflow-hidden transition-all duration-300"
                       data-billgang-product-path="24h"
                       data-billgang-domain="fynze.bgng.io"
+                      type="button"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 border border-slate-600/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 w-0 bg-gradient-to-r from-blue-500/20 to-transparent transition-all duration-500 group-hover/btn:w-full"></div>
                       <span className="relative z-10 text-blue-300 group-hover/btn:text-blue-200 transition-colors duration-300 flex items-center justify-center">
                         Select 24-Hour Plan
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                       </span>
@@ -556,7 +557,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Lifetime Plan - Enhanced */}
               <div className="reveal-element reveal-right">
                 <div className="relative p-8 rounded-xl bg-gradient-to-b from-blue-950/40 to-slate-900/90 border border-blue-800/30 group hover:border-blue-700/40 transition-all duration-500 hover:shadow-lg hover:shadow-blue-900/30 transform">
@@ -566,10 +567,10 @@ export default function Dashboard() {
                       BEST VALUE
                     </div>
                   </div>
-                  
+
                   {/* Subtle animated glow effect */}
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/20 to-cyan-400/20 rounded-xl blur-md opacity-50 group-hover:opacity-70 transition-opacity duration-700 pulse-glow"></div>
-                  
+
                   <div className="relative">
                     <div className="mb-5">
                       <h3 className="text-2xl font-bold text-slate-50 group-hover:text-white transition-colors duration-300">Lifetime Plan</h3>
@@ -581,7 +582,7 @@ export default function Dashboard() {
                         Competitor price: <span className="line-through">€60</span> <span className="text-blue-200 font-medium">Save €40.02</span>
                       </p>
                     </div>
-                    
+
                     <ul className="mt-7 space-y-4">
                       <li className="flex">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
@@ -615,12 +616,13 @@ export default function Dashboard() {
                         <span className="text-slate-200">Full hardware ID mask customization</span>
                       </li>
                     </ul>
-                    
+
                     <div className="mt-8">
                       <button 
                         className="relative w-full overflow-hidden group/btn"
                         data-billgang-product-path="perm"
                         data-billgang-domain="fynze.bgng.io"
+                        type="button"
                       >
                         <div className="absolute inset-0 w-3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover/btn:w-full transition-all duration-500"></div>
                         <div className="relative z-10 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover/btn:from-blue-500 group-hover/btn:to-blue-600 transition-all duration-300 shadow-md">
@@ -640,7 +642,7 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-        
+
         {/* Technology Showcase Section replacing Testimonials */}
         <section id="technology" className="py-16 bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
           <div className="absolute inset-0 grid-pattern opacity-20"></div>
@@ -654,7 +656,7 @@ export default function Dashboard() {
                 Unmatched security features that set us apart from competitors
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {/* Technology Item 1 */}
               <div className="reveal-element reveal-scale bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-800 hover:border-blue-500/30 transition-all duration-300 group">
@@ -663,7 +665,7 @@ export default function Dashboard() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3 gradient-text-blue-cyan">Deep Hardware Modification</h3>
                 <p className="text-slate-300">Our technology modifies your hardware IDs at the firmware level, creating permanent changes that persist through updates and reboots.</p>
-                
+
                 <div className="mt-6 pt-4 border-t border-slate-800">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-slate-400">Modification Depth</span>
@@ -674,7 +676,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Technology Item 2 */}
               <div className="reveal-element reveal-scale bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-800 hover:border-blue-500/30 transition-all duration-300 group">
                 <div className="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-all duration-300">
@@ -682,7 +684,7 @@ export default function Dashboard() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3 gradient-text-blue-cyan">Intelligent HWID Randomization</h3>
                 <p className="text-slate-300">Our AI-driven algorithm creates believable, consistent hardware profiles that appear genuine to even the most sophisticated detection systems.</p>
-                
+
                 <div className="mt-6 pt-4 border-t border-slate-800">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-slate-400">Detection Evasion</span>
@@ -693,7 +695,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Technology Item 3 */}
               <div className="reveal-element reveal-scale bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-800 hover:border-blue-500/30 transition-all duration-300 group">
                 <div className="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-all duration-300">
@@ -701,7 +703,7 @@ export default function Dashboard() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3 gradient-text-blue-cyan">Quantum-Resistant Encryption</h3>
                 <p className="text-slate-300">All your hardware data is secured with future-proof encryption that protects against even next-generation cracking attempts.</p>
-                
+
                 <div className="mt-6 pt-4 border-t border-slate-800">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-slate-400">Security Level</span>
@@ -715,7 +717,7 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-        
+
         {/* FAQ Section */}
         <section id="faq" className="py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -727,7 +729,7 @@ export default function Dashboard() {
                 Everything you need to know about our HWID Spoofer
               </p>
             </div>
-            
+
             <div className="space-y-4">
               {faqs.map((faq, index) => (
                 <FaqItem 
@@ -740,7 +742,7 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-        
+
         {/* CTA Section */}
         <section id="contact" className="py-16 relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900">
           <div className="absolute inset-0 grid-pattern opacity-30"></div>
@@ -771,7 +773,7 @@ export default function Dashboard() {
                     </span>
                   </div>
                 </a>
-                
+
                 <button className="relative overflow-hidden group rounded-lg">
                   <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg opacity-30 group-hover:opacity-100 blur-sm transition-opacity duration-300 group-hover:blur"></div>
                   <div className="relative z-10 py-4 px-8 rounded-lg bg-slate-900 border border-blue-600/50 group-hover:border-blue-500 transition-all duration-300">
@@ -785,7 +787,7 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-        
+
 
         {/* Footer with Policy Links */}
         <footer className="py-8 border-t border-slate-800 bg-gradient-to-b from-slate-950 to-slate-900">
@@ -795,7 +797,7 @@ export default function Dashboard() {
                 <h3 className="text-lg font-bold gradient-text-blue-cyan">Fynze Services</h3>
                 <p className="text-slate-400 text-sm mt-1">© {new Date().getFullYear()} All rights reserved.</p>
               </div>
-              
+
               <div className="flex items-center gap-6">
                 <button 
                   onClick={() => openPolicyDialog('terms')}
@@ -815,7 +817,7 @@ export default function Dashboard() {
                 >
                   Refund Policy
                 </button>
-                
+
                 <a 
                   href="https://discord.gg/gxw4GaKkGp" 
                   target="_blank" 
@@ -830,7 +832,7 @@ export default function Dashboard() {
           </div>
         </footer>
       </main>
-      
+
       {/* Policy dialog */}
       <PolicyDialog 
         type={policyDialog.type}
