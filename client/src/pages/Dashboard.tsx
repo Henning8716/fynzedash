@@ -196,7 +196,15 @@ export default function Dashboard() {
                 </p>
 
                 <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4 reveal-element reveal-bottom">
-                  <button className="relative overflow-hidden group rounded-lg" onClick={() => window.scrollTo({top: document.getElementById('pricing').offsetTop, behavior: 'smooth'})}>
+                  <button
+                    className="relative overflow-hidden group rounded-lg"
+                    onClick={() =>
+                      window.scrollTo({
+                        top: document.getElementById("pricing").offsetTop,
+                        behavior: "smooth",
+                      })
+                    }
+                  >
                     <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover:w-full transition-all duration-700 ease-in-out"></div>
                     <div className="relative z-10 py-3 px-7 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover:from-blue-500 group-hover:to-blue-600 transition-all duration-500 shadow-lg">
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-300/20 to-blue-600/0 opacity-0 group-hover:opacity-100 duration-500 bg-[length:50%_100%] bg-no-repeat bg-left group-hover:bg-right transition-all"></div>
@@ -290,7 +298,6 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
-
         {/* Quote Section */}
         <section
           id="quote"
@@ -1015,7 +1022,15 @@ export default function Dashboard() {
                   </div>
                 </a>
 
-                <button className="relative overflow-hidden group rounded-lg" onClick={() => window.scrollTo({top: document.getElementById('pricing').offsetTop, behavior: 'smooth'})}>
+                <button
+                  className="relative overflow-hidden group rounded-lg"
+                  onClick={() =>
+                    window.scrollTo({
+                      top: document.getElementById("pricing").offsetTop,
+                      behavior: "smooth",
+                    })
+                  }
+                >
                   <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg opacity-30 group-hover:opacity-100 blur-sm transition-opacity duration-300 group-hover:blur"></div>
                   <div className="relative z-10 py-4 px-8 rounded-lg bg-slate-900 border border-blue-600/50 group-hover:border-blue-500 transition-all duration-300">
                     <span className="font-medium text-lg text-blue-400 group-hover:text-blue-300 transition-colors duration-300 flex items-center">
