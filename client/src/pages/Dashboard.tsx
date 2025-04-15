@@ -541,6 +541,8 @@ export default function Dashboard() {
                   <div className="mt-8">
                     <button 
                       className="w-full group/btn relative py-3 px-4 rounded-lg overflow-hidden transition-all duration-300"
+                      data-billgang-product-path="24h"
+                      data-billgang-domain="fynze.bgng.io"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 border border-slate-600/50 transition-all duration-300"></div>
                       <div className="absolute inset-0 w-0 bg-gradient-to-r from-blue-500/20 to-transparent transition-all duration-500 group-hover/btn:w-full"></div>
@@ -605,12 +607,7 @@ export default function Dashboard() {
                         </div>
                         <span className="text-slate-200">Priority 1-on-1 assistance</span>
                       </li>
-                      <li className="flex">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
-                          <Check className="h-4 w-4 text-blue-400" />
-                        </div>
-                        <span className="text-slate-200">Multi-device support (up to 3 devices)</span>
-                      </li>
+
                       <li className="flex">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
                           <Check className="h-4 w-4 text-blue-400" />
@@ -622,11 +619,18 @@ export default function Dashboard() {
                     <div className="mt-8">
                       <button 
                         className="relative w-full overflow-hidden group/btn"
+                        data-billgang-product-path="perm"
+                        data-billgang-domain="fynze.bgng.io"
                       >
                         <div className="absolute inset-0 w-3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover/btn:w-full transition-all duration-500"></div>
                         <div className="relative z-10 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover/btn:from-blue-500 group-hover/btn:to-blue-600 transition-all duration-300 shadow-md">
                           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-300/20 to-blue-600/0 opacity-0 group-hover/btn:opacity-100 duration-500 bg-[length:50%_100%] bg-no-repeat bg-left group-hover/btn:bg-right transition-all"></div>
-                          <span className="font-medium text-white">Get Lifetime Access</span>
+                          <span className="font-medium text-white flex items-center justify-center">
+                            Get Lifetime Access
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                          </span>
                         </div>
                       </button>
                     </div>
@@ -752,7 +756,10 @@ export default function Dashboard() {
                 is the last HWID spoofer you'll ever need.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row justify-center gap-6 reveal-element reveal-bottom">
-                <button className="relative overflow-hidden group rounded-lg">
+                <a 
+                  href="#plans" 
+                  className="relative overflow-hidden group rounded-lg"
+                >
                   <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover:w-full transition-all duration-700 ease-in-out"></div>
                   <div className="relative z-10 py-4 px-8 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover:from-blue-500 group-hover:to-blue-600 transition-all duration-500 shadow-lg">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-300/20 to-blue-600/0 opacity-0 group-hover:opacity-100 duration-500 bg-[length:50%_100%] bg-no-repeat bg-left group-hover:bg-right transition-all"></div>
@@ -763,7 +770,7 @@ export default function Dashboard() {
                       </svg>
                     </span>
                   </div>
-                </button>
+                </a>
                 
                 <button className="relative overflow-hidden group rounded-lg">
                   <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg opacity-30 group-hover:opacity-100 blur-sm transition-opacity duration-300 group-hover:blur"></div>
