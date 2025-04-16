@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "wouter";
+import { Link } from "wouter"; // Keep Link if used elsewhere
 import { cn } from "@/lib/utils";
 import {
   Check,
@@ -13,10 +13,8 @@ import {
   X,
 } from "lucide-react";
 import { SiDiscord } from "react-icons/si";
-import { Button } from "@/components/ui/button";
 import Sidebar from "@/components/Sidebar";
 import FeatureCard from "@/components/FeatureCard";
-import TestimonialCard from "@/components/TestimonialCard";
 import FaqItem from "@/components/FaqItem";
 import PolicyDialog from "@/components/PolicyDialog";
 import setupScrollReveal from "@/lib/scrollReveal";
@@ -26,6 +24,7 @@ import loginScreen from "../assets/login_screen.png";
 import spoofScreen from "../assets/spoof_screen.png";
 import logoBg from "../assets/logo_bg.png";
 
+// --- Main Dashboard Component ---
 export default function Dashboard() {
   // State for policy dialogs
   const [policyDialog, setPolicyDialog] = useState<{
@@ -55,9 +54,12 @@ export default function Dashboard() {
   // Initialize scroll reveal animations once component is mounted
   useEffect(() => {
     const scrollReveal = setupScrollReveal();
-    return () => {
-      // Cleanup if needed
-    };
+    // Optional cleanup
+    // return () => {
+    //   if (scrollReveal && typeof scrollReveal.destroy === 'function') {
+    //     scrollReveal.destroy();
+    //   }
+    // };
   }, []);
 
   const features = [
@@ -99,36 +101,6 @@ export default function Dashboard() {
     },
   ];
 
-  const testimonials = [
-    {
-      rating: 5,
-      text: "After trying multiple HWID spoofers with no success, Fynze's solution finally worked for me. I can now play without getting kicked, and their support team was incredibly helpful throughout the process.",
-      author: {
-        initials: "MG",
-        name: "Marcus G.",
-        color: "bg-blue-600",
-      },
-    },
-    {
-      rating: 5,
-      text: "Fynze's Permanent HWID Spoofer is truly permanent. I've gone through several Windows updates and it's still working perfectly. Best investment for my online privacy and security.",
-      author: {
-        initials: "JT",
-        name: "Jordan T.",
-        color: "bg-cyan-600",
-      },
-    },
-    {
-      rating: 5,
-      text: "Their 24/7 support team is the real deal. Had a technical issue at 3 AM and they helped me resolve it within minutes. The product works as advertised without affecting my system's performance.",
-      author: {
-        initials: "AL",
-        name: "Alex L.",
-        color: "bg-indigo-600",
-      },
-    },
-  ];
-
   const faqs = [
     {
       value: "faq-1",
@@ -161,6 +133,23 @@ export default function Dashboard() {
         "No. Fynze's HWID Spoofer is engineered to have minimal impact on system performance. Unlike competitors that run resource-intensive processes in the background, our solution works by modifying system identifiers directly, requiring no continuous background processes. Most users report zero noticeable performance difference.",
     },
   ];
+
+  // --- Billgang Configuration (Both paths set to "perm") ---
+  const billgangDomain = "fynze.bgng.io";
+  const lifetimeProductPath = "perm";
+  const oneTimeProductPath = "perm"; // Both buttons use the "perm" path
+
+  // --- Function to scroll to pricing ---
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById("pricing");
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn("Pricing section not found for scrolling.");
+      // Fallback: scroll to top or a known element if pricing isn't found
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="flex min-h-screen gradient-bg-dark">
@@ -196,19 +185,15 @@ export default function Dashboard() {
                 </p>
 
                 <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4 reveal-element reveal-bottom">
+                  {/* --- Button to scroll to pricing --- */}
                   <button
                     className="relative overflow-hidden group rounded-lg"
-                    onClick={() =>
-                      window.scrollTo({
-                        top: document.getElementById("pricing").offsetTop,
-                        behavior: "smooth",
-                      })
-                    }
+                    onClick={scrollToPricing} // Use the scroll function
                   >
-                    <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover:w-full transition-all duration-700 ease-in-out"></div>
+                    <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover:w-full transition-all duration-700 ease-in-out pointer-events-none"></div>
                     <div className="relative z-10 py-3 px-7 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover:from-blue-500 group-hover:to-blue-600 transition-all duration-500 shadow-lg">
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-300/20 to-blue-600/0 opacity-0 group-hover:opacity-100 duration-500 bg-[length:50%_100%] bg-no-repeat bg-left group-hover:bg-right transition-all"></div>
-                      <span className="font-medium text-white flex items-center">
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-300/20 to-blue-600/0 opacity-0 group-hover:opacity-100 duration-500 bg-[length:50%_100%] bg-no-repeat bg-left group-hover:bg-right transition-all pointer-events-none"></div>
+                      <span className="font-medium text-white flex items-center pointer-events-none">
                         Get Started Now
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -228,13 +213,20 @@ export default function Dashboard() {
                     </div>
                   </button>
 
+                  {/* --- Button to scroll to features --- */}
                   <a
                     href="#features"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById("features")?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                    }}
                     className="relative overflow-hidden group rounded-lg"
                   >
-                    <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg opacity-0 group-hover:opacity-30 blur-sm transition-opacity duration-300"></div>
+                    <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg opacity-0 group-hover:opacity-30 blur-sm transition-opacity duration-300 pointer-events-none"></div>
                     <div className="relative z-10 py-3 px-7 rounded-lg bg-transparent border border-blue-600/50 group-hover:border-blue-500 transition-all duration-300">
-                      <span className="font-medium text-blue-400 group-hover:text-blue-300 transition-colors duration-300 flex items-center">
+                      <span className="font-medium text-blue-400 group-hover:text-blue-300 transition-colors duration-300 flex items-center pointer-events-none">
                         View Features
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -298,6 +290,7 @@ export default function Dashboard() {
             </div>
           </div>
         </section>
+
         {/* Quote Section */}
         <section
           id="quote"
@@ -461,7 +454,6 @@ export default function Dashboard() {
                   </div>
                 </div>
 
-                {/* Subtle animated glow effect */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/20 to-cyan-400/20 rounded-xl blur-md opacity-50 pulse-glow"></div>
 
                 <div className="relative">
@@ -619,7 +611,7 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Pricing Section */}
+        {/* Pricing Section - Both buttons trigger Billgang for "perm" */}
         <section id="pricing" className="py-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-16 reveal-element reveal-bottom">
@@ -632,10 +624,9 @@ export default function Dashboard() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto relative">
-              {/* Gradient connection between plans */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-40 hidden md:block bg-gradient-to-b from-blue-500/0 via-blue-500/50 to-blue-500/0"></div>
 
-              {/* 24H Plan */}
+              {/* 24H Plan - Triggers Billgang for "perm" */}
               <div className="reveal-element reveal-left">
                 <div className="relative p-6 rounded-xl bg-gradient-to-b from-slate-800/30 to-slate-900/70 border border-slate-700 hover:border-slate-600 transition-all duration-500 hover:shadow-md hover:shadow-blue-900/20 group">
                   <div className="mb-4">
@@ -680,7 +671,7 @@ export default function Dashboard() {
                       </span>
                     </li>
                     <li className="flex">
-                      <div className="flex-shrink-0w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center mr-2">
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center mr-2">
                         <Check className="h-3 w-3 text-blue-400" />
                       </div>
                       <span className="text-slate-300">
@@ -690,15 +681,14 @@ export default function Dashboard() {
                   </ul>
 
                   <div className="mt-8">
-                    <a
-                      href="https://buy.fynze.net"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full group/btn relative py-3 px-4 rounded-lg overflow-hidden transition-all duration-300 block"
+                    <button
+                      data-billgang-product-path={oneTimeProductPath} // Uses "perm"
+                      data-billgang-domain={billgangDomain}
+                      className="w-full group/btn relative py-3 px-4 rounded-lg overflow-hidden transition-all duration-300 block border border-slate-600/50 hover:border-slate-500/70"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 border border-slate-600/50 transition-all duration-300"></div>
-                      <div className="absolute inset-0 w-0 bg-gradient-to-r from-blue-500/20 to-transparent transition-all duration-500 group-hover/btn:w-full"></div>
-                      <span className="relative z-10 text-blue-300 group-hover/btn:text-blue-200 transition-colors duration-300 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-700 group-hover/btn:from-slate-700 group-hover/btn:to-slate-600 transition-all duration-300 pointer-events-none"></div>
+                      <div className="absolute inset-0 w-0 bg-gradient-to-r from-blue-500/20 to-transparent transition-all duration-500 group-hover/btn:w-full pointer-events-none"></div>
+                      <span className="relative z-10 text-blue-300 group-hover/btn:text-blue-200 transition-colors duration-300 flex items-center justify-center pointer-events-none">
                         Select 24-Hour Plan
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -715,23 +705,20 @@ export default function Dashboard() {
                           />
                         </svg>
                       </span>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
 
-              {/* Lifetime Plan - Enhanced */}
+              {/* Lifetime Plan - Triggers Billgang for "perm" */}
               <div className="reveal-element reveal-right">
                 <div className="relative p-8 rounded-xl bg-gradient-to-b from-blue-950/40 to-slate-900/90 border border-blue-800/30 group hover:border-blue-700/40 transition-all duration-500 hover:shadow-lg hover:shadow-blue-900/30 transform">
-                  {/* Best Value Label */}
                   <div className="absolute -top-4 -right-4 p-0.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-400">
                     <div className="px-4 py-1 rounded-full bg-blue-950/95 text-blue-200 text-sm font-medium">
                       BEST VALUE
                     </div>
                   </div>
-
-                  {/* Subtle animated glow effect */}
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/20 to-cyan-400/20 rounded-xl blur-md opacity-50 group-hover:opacity-70 transition-opacity duration-700 pulse-glow"></div>
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600/20 to-cyan-400/20 rounded-xl blur-md opacity-50 group-hover:opacity-70 transition-opacity duration-700 pulse-glow pointer-events-none"></div>
 
                   <div className="relative">
                     <div className="mb-5">
@@ -786,7 +773,6 @@ export default function Dashboard() {
                           Priority 1-on-1 assistance
                         </span>
                       </li>
-
                       <li className="flex">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-2">
                           <Check className="h-4 w-4 text-blue-400" />
@@ -798,16 +784,15 @@ export default function Dashboard() {
                     </ul>
 
                     <div className="mt-8">
-                      <a
-                        href="https://buy.fynze.net"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative w-full overflow-hidden group/btn block"
+                      <button
+                        data-billgang-product-path={lifetimeProductPath} // Uses "perm"
+                        data-billgang-domain={billgangDomain}
+                        className="relative w-full overflow-hidden group/btn block rounded-lg shadow-md"
                       >
-                        <div className="absolute inset-0 w-3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover/btn:w-full transition-all duration-500"></div>
-                        <div className="relative z-10 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover/btn:from-blue-500 group-hover/btn:to-blue-600 transition-all duration-300 shadow-md">
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-300/20 to-blue-600/0 opacity-0 group-hover/btn:opacity-100 duration-500 bg-[length:50%_100%] bg-no-repeat bg-left group-hover/btn:bg-right transition-all"></div>
-                          <span className="font-medium text-white flex items-center justify-center">
+                        <div className="absolute inset-0 w-3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover/btn:w-full transition-all duration-500 pointer-events-none"></div>
+                        <div className="relative z-10 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover/btn:from-blue-500 group-hover/btn:to-blue-600 transition-all duration-300 pointer-events-none">
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-300/20 to-blue-600/0 opacity-0 group-hover/btn:opacity-100 duration-500 bg-[length:50%_100%] bg-no-repeat bg-left group-hover/btn:bg-right transition-all pointer-events-none"></div>
+                          <span className="relative font-medium text-white flex items-center justify-center pointer-events-none">
                             Get Lifetime Access
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -825,7 +810,7 @@ export default function Dashboard() {
                             </svg>
                           </span>
                         </div>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -834,7 +819,7 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* Technology Showcase Section replacing Testimonials */}
+        {/* Technology Showcase Section */}
         <section
           id="technology"
           className="py-16 bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden"
@@ -852,7 +837,6 @@ export default function Dashboard() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {/* Technology Item 1 */}
               <div className="reveal-element reveal-scale bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-800 hover:border-blue-500/30 transition-all duration-300 group">
                 <div className="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-all duration-300">
                   <Cpu className="w-7 h-7 text-blue-400 group-hover:text-blue-300" />
@@ -884,7 +868,6 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              {/* Technology Item 2 */}
               <div className="reveal-element reveal-scale bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-800 hover:border-blue-500/30 transition-all duration-300 group">
                 <div className="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-all duration-300">
                   <Shield className="w-7 h-7 text-blue-400 group-hover:text-blue-300" />
@@ -914,7 +897,6 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              {/* Technology Item 3 */}
               <div className="reveal-element reveal-scale bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-6 rounded-xl border border-slate-800 hover:border-blue-500/30 transition-all duration-300 group">
                 <div className="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-all duration-300">
                   <Database className="w-7 h-7 text-blue-400 group-hover:text-blue-300" />
@@ -974,7 +956,7 @@ export default function Dashboard() {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section - Button scrolls to pricing */}
         <section
           id="contact"
           className="py-16 relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900"
@@ -995,14 +977,16 @@ export default function Dashboard() {
                 and is the last HWID spoofer you'll ever need.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row justify-center gap-6 reveal-element reveal-bottom">
-                <a
-                  onClick={() => window.scrollTo({top: document.getElementById('pricing').offsetTop, behavior: 'smooth'})}
-                  className="relative overflow-hidden group rounded-lg"
+                {/* --- MODIFIED: Button now scrolls to pricing --- */}
+                <button
+                  onClick={scrollToPricing} // Use the scroll function
+                  className="relative overflow-hidden group rounded-lg shadow-lg"
+                  // Removed Billgang data attributes
                 >
-                  <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover:w-full transition-all duration-700 ease-in-out"></div>
-                  <div className="relative z-10 py-4 px-8 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover:from-blue-500 group-hover:to-blue-600 transition-all duration-500 shadow-lg">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-300/20 to-blue-600/0 opacity-0 group-hover:opacity-100 duration-500 bg-[length:50%_100%] bg-no-repeat bg-left group-hover:bg-right transition-all"></div>
-                    <span className="font-medium text-lg text-white flex items-center">
+                  <div className="absolute inset-0 w-1/3 bg-gradient-to-r from-blue-400 to-cyan-400 blur-sm opacity-75 group-hover:w-full transition-all duration-700 ease-in-out pointer-events-none"></div>
+                  <div className="relative z-10 py-4 px-8 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 group-hover:from-blue-500 group-hover:to-blue-600 transition-all duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-300/20 to-blue-600/0 opacity-0 group-hover:opacity-100 duration-500 bg-[length:50%_100%] bg-no-repeat bg-left group-hover:bg-right transition-all pointer-events-none"></div>
+                    <span className="relative font-medium text-lg text-white flex items-center pointer-events-none">
                       Get Fynze HWID Spoofer
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1020,20 +1004,19 @@ export default function Dashboard() {
                       </svg>
                     </span>
                   </div>
-                </a>
+                </button>
+                {/* --- END MODIFICATION --- */}
 
+                {/* Discord button remains an <a> tag */}
                 <a
+                  href="https://discord.gg/gxw4GaKkGp"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="relative overflow-hidden group rounded-lg"
-                  onClick={() =>
-                    window.scrollTo({
-                      top: document.getElementById("pricing").offsetTop,
-                      behavior: "smooth",
-                    })
-                  }
                 >
-                  <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg opacity-30 group-hover:opacity-100 blur-sm transition-opacity duration-300 group-hover:blur"></div>
+                  <div className="absolute -inset-px bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg opacity-30 group-hover:opacity-100 blur-sm transition-opacity duration-300 group-hover:blur pointer-events-none"></div>
                   <div className="relative z-10 py-4 px-8 rounded-lg bg-slate-900 border border-blue-600/50 group-hover:border-blue-500 transition-all duration-300">
-                    <span className="font-medium text-lg text-blue-400 group-hover:text-blue-300 transition-colors duration-300 flex items-center">
+                    <span className="font-medium text-lg text-blue-400 group-hover:text-blue-300 transition-colors duration-300 flex items-center pointer-events-none">
                       Join Discord
                       <SiDiscord className="ml-2 h-5 w-5 transform group-hover:scale-110 transition-transform duration-300" />
                     </span>
